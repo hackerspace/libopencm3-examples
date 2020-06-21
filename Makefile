@@ -17,8 +17,8 @@
 ## along with this library.  If not, see <http://www.gnu.org/licenses/>.
 ##
 
+ifneq ($(ARCH),riscv)
 PREFIX		?= arm-none-eabi-
-
 TARGETS		:= stm32/f0 stm32/f1 stm32/f2 stm32/f3 stm32/f4
 TARGETS		+= stm32/l0 stm32/l1 stm32/l4
 TARGETS		+= lpc/lpc13xx lpc/lpc17xx #lpc/lpc43xx
@@ -26,6 +26,10 @@ TARGETS		+= tiva/lm3s tiva/lm4f
 TARGETS		+= efm32/efm32tg efm32/efm32g efm32/efm32lg efm32/efm32gg
 TARGETS		+= vf6xx
 TARGETS		+= sam/d
+else
+PREFIX		?= riscv-nuclei-elf-
+TARGETS		:= gd32v/f103
+endif
 
 # Be silent per default, but 'make V=1' will show all compiler calls.
 ifneq ($(V),1)

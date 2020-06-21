@@ -28,7 +28,11 @@ endif
 ###############################################################################
 # Executables
 
+ifneq ($(ARCH),riscv)
 PREFIX		?= arm-none-eabi-
+else
+PREFIX		?= riscv-nuclei-elf-
+endif
 
 CC		:= $(PREFIX)gcc
 CXX		:= $(PREFIX)g++
