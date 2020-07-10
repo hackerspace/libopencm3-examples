@@ -21,7 +21,8 @@ OBJS = ssd1306.o console.o gud.o systick.o
 
 BINARY = usb-display
 
-LDSCRIPT = $(OPENCM3_DIR)/lib/gd32v/f103/gd32vf103xb.ld
+#LDSCRIPT = $(OPENCM3_DIR)/lib/gd32v/f103/gd32vf103xb.ld
+DEVICE = GD32VF103CBT6
 
 include ../../Makefile.include
 
